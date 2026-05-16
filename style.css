@@ -1,0 +1,154 @@
+/* Configurações Globais */
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --primary-color: #4a90e2; /* Um azul amigável */
+    --accent-color: #f7b731; /* Amarelo suave */
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Principal - Adaptável */
+.container {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 450px; /* Limita largura em telas grandes */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    overflow: hidden; /* Para manter a animação dentro */
+}
+
+/* Animação de Entrada do Site */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Header */
+header {
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: var(--shadow);
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Container de Links */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Cartões de Link */
+.link-card {
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-overflow: ellipsis; /* Evita que o e-mail longo quebre */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.link-card span {
+    font-size: 0.9rem;
+}
+
+/* Cores específicas para ícones */
+.link-card i {
+    font-size: 1.4rem;
+}
+
+.whatsapp i { color: #25D366; }
+.instagram i { color: #E1306C; }
+.email i { color: #c0392b; }
+
+/* Efeitos de Hover (Passe o Mouse) */
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Animação de Pulsar ao Carregar (Botões) */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+.bounce:hover {
+    animation: bounce 1s;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Responsividade (Telas Menores que 400px) */
+@media (max-width: 400px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    .link-card span {
+        font-size: 0.8rem;
+    }
+}
